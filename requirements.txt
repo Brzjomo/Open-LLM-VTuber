@@ -5,7 +5,6 @@ transformers
 halo
 rich
 loguru
-numpy
 pydub
 sounddevice
 soundfile

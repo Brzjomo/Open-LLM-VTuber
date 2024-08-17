@@ -20,7 +20,8 @@ ollama:
   ORGANIZATION_ID: "org_eternity"
   PROJECT_ID: "project_glass"
   ## LLM name
-  MODEL: "qwen2:1.5b"
+  MODEL: "qwen2"
+  # MODEL: "qwen2:1.5b"
   # system prompt is at the very end of this file
   VERBOSE: False
 
@@ -50,12 +51,12 @@ LIVE2D_MODEL: "shizuku-local"
 #  ============== Voice Interaction Settings ==============
 
 # === Automatic Speech Recognition ===
-VOICE_INPUT_ON: False
+VOICE_INPUT_ON: True
 # Put your mic in the browser or in the terminal? (would increase latency)
-MIC_IN_BROWSER: False
+MIC_IN_BROWSER: True
 
 # speech to text model options: "Faster-Whisper", "WhisperCPP", "Whisper", "AzureASR", "FunASR"
-ASR_MODEL: "Faster-Whisper"
+ASR_MODEL: "FunASR"
 
 # Faster whisper config
 Faster-Whisper:
@@ -107,7 +108,7 @@ barkTTS:
 edgeTTS:
   # Check out doc at https://github.com/rany2/edge-tts
   # Use `edge-tts --list-voices` to list all available voices
-  voice: "en-US-AvaMultilingualNeural" #"zh-CN-XiaoxiaoNeural"
+  voice: "zh-CN-XiaoxiaoNeural" #"zh-CN-XiaoxiaoNeural"
 
 # pyttsx3 doesn't have any config.
 
@@ -151,7 +152,7 @@ MEMORY_SNAPSHOT: True
 # All persona files are stored as txt in 'prompts/persona' directory. 
 # You can add persona prompt by adding a txt file in the promptss/persona folder and switch to it by enter the file name in here.
 # some options: "en_sarcastic_neuro", "zh_翻译腔"
-PERSONA_CHOICE: "zh_翻译腔" # or if you rather edit persona prompt below, leave it blank ...
+PERSONA_CHOICE: "zh_assistant" # or if you rather edit persona prompt below, leave it blank ...
 
 # This prompt will be used instead if the PERSONA_CHOICE is empty
 DEFAULT_PERSONA_PROMPT_IN_YAML: |
@@ -159,7 +160,7 @@ DEFAULT_PERSONA_PROMPT_IN_YAML: |
 
 # This will be appended to the end of system prompt to let LLM include keywords to control facial expressions.
 # Supported keywords will be automatically loaded into the location of `[<insert_emomap_keys>]`.
-LIVE2D_Expression_Prompt: "live2d_expression_prompt"
+# LIVE2D_Expression_Prompt: "live2d_expression_prompt"
 
 
 
