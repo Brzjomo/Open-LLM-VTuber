@@ -15,6 +15,10 @@ from tts.tts_interface import TTSInterface
 
 import yaml
 
+def print_gray_text(text):
+    gray = "\033[90m"
+    reset = "\033[0m"
+    print(gray + text + reset)
 
 class OpenLLMVTuberMain:
 
@@ -127,7 +131,8 @@ class OpenLLMVTuberMain:
             print("Exiting...")
             exit()
 
-        print(f"User input: {user_input}")
+        # print(f"User input: {user_input}")
+        print(f"AI: ")
 
         chat_completion: Iterator[str] = self.llm.chat_iter(user_input)
 
@@ -238,7 +243,8 @@ class OpenLLMVTuberMain:
                     self.live2d.send_expressions_str(sentence, send_delay=0)
                     self.live2d.send_text(sentence)
                     return
-                print("streaming...")
+                # print("streaming...")
+                print_gray_text("streaming...")
                 # Stream the audio to the frontend
                 stream_audio.StreamAudio(
                     filepath,
@@ -312,7 +318,8 @@ class OpenLLMVTuberMain:
                 task_queue.put(audio_info)
                 index += 1
                 sentence_buffer = ""
-            print("\n\n --- Audio generation completed ---")
+            # print("\n\n --- Audio generation completed ---")
+            print_gray_text("\n\n --- Audio generation completed ---")
             return full_response
 
         def consumer_worker(task_queue: queue):

@@ -20,7 +20,7 @@ ollama:
   ORGANIZATION_ID: "org_eternity"
   PROJECT_ID: "project_glass"
   ## LLM name
-  MODEL: "llama3.1:latest"
+  MODEL: "qwen2:1.5b"
   # system prompt is at the very end of this file
   VERBOSE: False
 
@@ -50,7 +50,7 @@ LIVE2D_MODEL: "shizuku-local"
 #  ============== Voice Interaction Settings ==============
 
 # === Automatic Speech Recognition ===
-VOICE_INPUT_ON: True
+VOICE_INPUT_ON: False
 # Put your mic in the browser or in the terminal? (would increase latency)
 MIC_IN_BROWSER: False
 
@@ -71,7 +71,7 @@ WhisperCPP:
   print_realtime: False
   print_progress: False
   
-  language: "en" # en, zh, auto, 
+  language: "auto" # en, zh, auto, 
 
 Whisper:
   name: "medium"
@@ -151,7 +151,7 @@ MEMORY_SNAPSHOT: True
 # All persona files are stored as txt in 'prompts/persona' directory. 
 # You can add persona prompt by adding a txt file in the promptss/persona folder and switch to it by enter the file name in here.
 # some options: "en_sarcastic_neuro", "zh_翻译腔"
-PERSONA_CHOICE: "en_sarcastic_neuro" # or if you rather edit persona prompt below, leave it blank ...
+PERSONA_CHOICE: "zh_翻译腔" # or if you rather edit persona prompt below, leave it blank ...
 
 # This prompt will be used instead if the PERSONA_CHOICE is empty
 DEFAULT_PERSONA_PROMPT_IN_YAML: |
@@ -172,7 +172,7 @@ LIVE2D_Expression_Prompt: "live2d_expression_prompt"
 EXTRA_SYSTEM_PROMPT_RAG: "Your memory may remind you with some contextual information, but focus on the conversation instead of your memory."
 AI_NAME: "AI"
 # User name
-USER_NAME: "User"
+USER_NAME: "Chat"
 # Should the chat history be saved?
 SAVE_CHAT_HISTORY: True
 # The directory where chat history is stored
